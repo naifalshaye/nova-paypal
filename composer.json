@@ -1,9 +1,10 @@
 {
     "name": "naif/paypal",
-    "description": "A Laravel Nova card.",
+    "description": "A Laravel Nova card to display PayPal current balance",
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        'paypal'
     ],
     "license": "MIT",
     "require": {
