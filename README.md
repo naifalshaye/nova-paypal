@@ -7,7 +7,7 @@ A Laravel Nova card to display PayPal current balance.
 You can install the package in to a Laravel app that uses Nova via composer:
 
 ```bash
-composer require naif/nova-paypal
+composer require naif/paypal
 ```
 
 ## Usage:
