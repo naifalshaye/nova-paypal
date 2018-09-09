@@ -51,6 +51,7 @@ NOVA_PAYPAL_SHOW_LOGO=true
 
 ## Support:
 naif@naif.io
+https://www.linkedin.com/in/naif
 
 ## License:
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
