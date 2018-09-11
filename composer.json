@@ -1,6 +1,6 @@
 {
     "name": "naif/paypal",
-    "description": "A Laravel Nova card to display PayPal current balance",
+    "description": "A Laravel Nova card to display PayPal current balance and latest transactions",
     "keywords": [
         "laravel",
         "nova",
