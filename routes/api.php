@@ -19,4 +19,4 @@ use Naif\Paypal\Http\Controllers\PayPalController;
 //     //
 // });
 
-Route::get('getBalance', PayPalController::class.'@index');
+Route::get('getData', PayPalController::class.'@index');

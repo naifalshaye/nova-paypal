@@ -5,7 +5,7 @@ class Paypal
     /**
      * API Version
      */
-    const VERSION = 51.0;
+    const VERSION = 47.0;
 
     /**
      * List of valid API environments
@@ -116,7 +116,7 @@ class Paypal
             switch ($this->config['environment']) {
                 case 'sandbox':
                 case 'beta-sandbox':
-                    $this->url = "https://api-3t.$environment.paypal.com/nvp";
+                    $this->url = "https://api-3t.paypal.com/nvp";
                     break;
                 default:
                     $this->url = 'https://api-3t.paypal.com/nvp';

@@ -1,34 +1,86 @@
 <template>
-    <card class="flex flex-col items-center justify-center" style="width:250px;">
-        <div align="center" style="margin-top:-20px; margin-bottom:10px;">
-            <div v-if="response.show_logo !== true" style="font-size:14px;">PayPal Current Balance:</div>
-            <img :src="paypal_logo" v-show="response.show_logo === true"  width="150"/>
-        </div>
+    <card class="h-auto">
+        <div class="px-3 py-3   ">
+            <div align="left">
+                <img :src="paypal_logo" v-show="hide_logo === false" width="150"/>
+                <div class="spinner" id="spinner" align="right"></div>
+            </div>
 
-        <div>
-                <div class="text-center text-2lg font-light" v-if="response.ACK === 'Success'">${{response.L_AMT0}}</div>
-            <div class="text-center" style="color:red; font-size:12px;" v-if="response.ACK === 'Failure'">{{response.L_SEVERITYCODE0}} {{response.L_ERRORCODE0}}: {{response.L_LONGMESSAGE0}}</div>
+            <div v-show="!loading">
+                <div style="margin-bottom: 10px; font-family: 'Arial';">
+                    <div class="text-center text-2lg font-light" v-if="balance.ACK === 'Success'" style="font-size:14px; color:green;">Current Balance: ${{balance.L_AMT0}}</div>
+                    <div class="text-center" style="color:red; font-size:12px;" v-if="balance.ACK === 'Failure'">{{balance.L_SEVERITYCODE0}} {{balance.L_ERRORCODE0}}: {{balance.L_LONGMESSAGE0}}</div>
+                </div>
+                <div style="margin-bottom:20px;" v-show="transactions">
+                    <table class="table table-bordered table-hover table-responsive" style="font-size:14px; margin-left:45px;">
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr v-for="transaction in transactions">
+                            <td style="height: 40px; font-size:12px;">
+                                <a :href="'https://www.paypal.com/activity/payment/' +transaction.transaction_id" target="_blank">{{transaction.transaction_id}}</a>
+                            </td>
+                            <td style="height: 40px;">{{transaction.timestamp}}</td>
+                            <td style="height: 40px;">${{transaction.amt}}</td>
+                            <td style="height: 40px;">{{transaction.status}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </card>
 </template>
+<style>
+    @keyframes spinner {
+        to {transform: rotate(360deg);}
+    }
 
+    .spinner:before {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        margin-top: -40px;
+        margin-left:-40px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        border-top-color: #07d;
+        animation: spinner .6s linear infinite;
+    }
+</style>
 <script>
-
     export default {
         props: ['card'],
-
-    data: () => {
-        return {
-            paypal_logo: 'https://www.paypalobjects.com/webstatic/en_US/mktg/pages/stories/pp_h_rgb.jpg',
-            response: []
-        }
-    },
-    mounted() {
-        Nova.request().get('/nova-vendor/paypal/getBalance')
-            .then(response => {
-                this.response = response.data;
+        data: () => {
+            return {
+                paypal_logo: 'https://www.paypalobjects.com/webstatic/en_US/mktg/pages/stories/pp_h_rgb.jpg',
+                response: [],
+                balance: [],
+                hide_logo: false,
+                loading: true
             }
-        );
-    },
-}
+        },
+        mounted() {
+            if (this.card.hide_logo == true){
+                this.hide_logo = true;
+            }
+            Nova.request().get('/nova-vendor/paypal/getData', {
+                params: {
+                    days: this.card.days,
+                    count: this.card.count
+                }
+            })
+            .then(response => {
+                this.balance = response.data.balance;
+                this.transactions = response.data.transactions;
+                this.loading = false;
+                document.getElementById('spinner').style.display = 'none';
+
+    });
+        }
+    }
 </script>
