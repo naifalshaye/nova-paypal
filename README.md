@@ -38,10 +38,10 @@ protected function cards()
 
 <img src="https://raw.githubusercontent.com/naifalshaye/nova-paypal/master/screenshots/example.png" width="700">
 
-<h4>If there are any errors occurs it will appear in the card with error code and description from PayPal</h4>
+<h4>If there is any error occurs it will appear in the card with error code and description from PayPal</h4>
 <img src="https://raw.githubusercontent.com/naifalshaye/nova-paypal/master/screenshots/error.png" width="700">
 
-A list of all errors you can lookup by error code:
+Here are a list of all errors from PayPal you can lookup by error code:
 https://developer.paypal.com/docs/classic/api/errors/
 
 ## Get your API access from PayPal website
@@ -51,7 +51,7 @@ Paypal > Profile > Profile and settings > My selling tools > API access > NVP/SO
 
 <img src="https://github.com/naifalshaye/nova-paypal/blob/master/screenshots/auth.png">
 
-The maximum number of transactions that can be returned from a TransactionSearch API call is 100.
+Note: The maximum number of transactions that can be returned from PayPal API is 100.
 
 ## Add API details to your .env file
 ```php
