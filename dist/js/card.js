@@ -1,1 +1,497 @@
-!function(t){var e={};function n(r){if(e[r])return e[r].exports;var a=e[r]={i:r,l:!1,exports:{}};return t[r].call(a.exports,a,a.exports,n),a.l=!0,a.exports}n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:r})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=0)}([function(t,e,n){n(1),t.exports=n(11)},function(t,e,n){Nova.booting(function(t,e){t.component("paypal",n(2))})},function(t,e,n){var r=n(8)(n(9),n(10),!1,function(t){n(3)},null,null);t.exports=r.exports},function(t,e,n){var r=n(4);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals);n(6)("7a8a31b3",r,!0,{})},function(t,e,n){(t.exports=n(5)(!1)).push([t.i,'@-webkit-keyframes spinner{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes spinner{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.spinner:before{content:"";-webkit-box-sizing:border-box;box-sizing:border-box;position:absolute;width:45px;height:45px;margin-top:-40px;margin-left:-40px;border-radius:50%;border:1px solid #ccc;border-top-color:#07d;-webkit-animation:spinner .6s linear infinite;animation:spinner .6s linear infinite}',""])},function(t,e){t.exports=function(t){var e=[];return e.toString=function(){return this.map(function(e){var n=function(t,e){var n=t[1]||"",r=t[3];if(!r)return n;if(e&&"function"==typeof btoa){var a=(i=r,"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */"),o=r.sources.map(function(t){return"/*# sourceURL="+r.sourceRoot+t+" */"});return[n].concat(o).concat([a]).join("\n")}var i;return[n].join("\n")}(e,t);return e[2]?"@media "+e[2]+"{"+n+"}":n}).join("")},e.i=function(t,n){"string"==typeof t&&(t=[[null,t,""]]);for(var r={},a=0;a<this.length;a++){var o=this[a][0];"number"==typeof o&&(r[o]=!0)}for(a=0;a<t.length;a++){var i=t[a];"number"==typeof i[0]&&r[i[0]]||(n&&!i[2]?i[2]=n:n&&(i[2]="("+i[2]+") and ("+n+")"),e.push(i))}},e}},function(t,e,n){var r="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!r)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var a=n(7),o={},i=r&&(document.head||document.getElementsByTagName("head")[0]),s=null,c=0,l=!1,u=function(){},p=null,d="data-vue-ssr-id",f="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());function v(t){for(var e=0;e<t.length;e++){var n=t[e],r=o[n.id];if(r){r.refs++;for(var a=0;a<r.parts.length;a++)r.parts[a](n.parts[a]);for(;a<n.parts.length;a++)r.parts.push(g(n.parts[a]));r.parts.length>n.parts.length&&(r.parts.length=n.parts.length)}else{var i=[];for(a=0;a<n.parts.length;a++)i.push(g(n.parts[a]));o[n.id]={id:n.id,refs:1,parts:i}}}}function h(){var t=document.createElement("style");return t.type="text/css",i.appendChild(t),t}function g(t){var e,n,r=document.querySelector("style["+d+'~="'+t.id+'"]');if(r){if(l)return u;r.parentNode.removeChild(r)}if(f){var a=c++;r=s||(s=h()),e=b.bind(null,r,a,!1),n=b.bind(null,r,a,!0)}else r=h(),e=function(t,e){var n=e.css,r=e.media,a=e.sourceMap;r&&t.setAttribute("media",r);p.ssrId&&t.setAttribute(d,e.id);a&&(n+="\n/*# sourceURL="+a.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(a))))+" */");if(t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}.bind(null,r),n=function(){r.parentNode.removeChild(r)};return e(t),function(r){if(r){if(r.css===t.css&&r.media===t.media&&r.sourceMap===t.sourceMap)return;e(t=r)}else n()}}t.exports=function(t,e,n,r){l=n,p=r||{};var i=a(t,e);return v(i),function(e){for(var n=[],r=0;r<i.length;r++){var s=i[r];(c=o[s.id]).refs--,n.push(c)}e?v(i=a(t,e)):i=[];for(r=0;r<n.length;r++){var c;if(0===(c=n[r]).refs){for(var l=0;l<c.parts.length;l++)c.parts[l]();delete o[c.id]}}}};var _,m=(_=[],function(t,e){return _[t]=e,_.filter(Boolean).join("\n")});function b(t,e,n,r){var a=n?"":r.css;if(t.styleSheet)t.styleSheet.cssText=m(e,a);else{var o=document.createTextNode(a),i=t.childNodes;i[e]&&t.removeChild(i[e]),i.length?t.insertBefore(o,i[e]):t.appendChild(o)}}},function(t,e){t.exports=function(t,e){for(var n=[],r={},a=0;a<e.length;a++){var o=e[a],i=o[0],s={id:t+":"+a,css:o[1],media:o[2],sourceMap:o[3]};r[i]?r[i].parts.push(s):n.push(r[i]={id:i,parts:[s]})}return n}},function(t,e){t.exports=function(t,e,n,r,a,o){var i,s=t=t||{},c=typeof t.default;"object"!==c&&"function"!==c||(i=t,s=t.default);var l,u="function"==typeof s?s.options:s;if(e&&(u.render=e.render,u.staticRenderFns=e.staticRenderFns,u._compiled=!0),n&&(u.functional=!0),a&&(u._scopeId=a),o?(l=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),r&&r.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(o)},u._ssrRegister=l):r&&(l=r),l){var p=u.functional,d=p?u.render:u.beforeCreate;p?(u._injectStyles=l,u.render=function(t,e){return l.call(e),d(t,e)}):u.beforeCreate=d?[].concat(d,l):[l]}return{esModule:i,exports:s,options:u}}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={props:["card"],data:function(){return{paypal_logo:"https://www.paypalobjects.com/webstatic/en_US/mktg/pages/stories/pp_h_rgb.jpg",response:[],balance:[],hide_logo:!1,loading:!0}},mounted:function(){var t=this;1==this.card.hide_logo&&(this.hide_logo=!0),Nova.request().get("/nova-vendor/paypal/getData",{params:{days:this.card.days,count:this.card.count}}).then(function(e){t.balance=e.data.balance,t.transactions=e.data.transactions,t.loading=!1,document.getElementById("spinner").style.display="none"})}}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("card",{staticClass:"h-auto"},[n("div",{staticClass:"px-3 py-3   "},[n("div",{attrs:{align:"left"}},[n("img",{directives:[{name:"show",rawName:"v-show",value:!1===t.hide_logo,expression:"hide_logo === false"}],attrs:{src:t.paypal_logo,width:"150"}}),t._v(" "),n("div",{staticClass:"spinner",attrs:{id:"spinner",align:"right"}})]),t._v(" "),n("div",{directives:[{name:"show",rawName:"v-show",value:!t.loading,expression:"!loading"}]},[n("div",{staticStyle:{"margin-bottom":"10px","font-family":"'Arial'"}},["Success"===t.balance.ACK?n("div",{staticClass:"text-center text-2lg font-light",staticStyle:{"font-size":"14px",color:"green"}},[t._v("Current Balance: $"+t._s(t.balance.L_AMT0))]):t._e(),t._v(" "),"Failure"===t.balance.ACK?n("div",{staticClass:"text-center",staticStyle:{color:"red","font-size":"12px"}},[t._v(t._s(t.balance.L_SEVERITYCODE0)+" "+t._s(t.balance.L_ERRORCODE0)+": "+t._s(t.balance.L_LONGMESSAGE0))]):t._e()]),t._v(" "),n("div",{directives:[{name:"show",rawName:"v-show",value:t.transactions,expression:"transactions"}],staticStyle:{"margin-bottom":"20px"}},[n("table",{staticClass:"table table-bordered table-hover table-responsive",staticStyle:{"font-size":"14px","margin-left":"45px"}},[n("tr",[n("th",[t._v("Transaction ID")]),t._v(" "),n("th",[t._v("Date")]),t._v(" "),n("th",[t._v("Amount")]),t._v(" "),n("th",[t._v("Status")])]),t._v(" "),t._l(t.transactions,function(e){return n("tr",[n("td",{staticStyle:{height:"40px","font-size":"12px"}},[n("a",{attrs:{href:"https://www.paypal.com/activity/payment/"+e.transaction_id,target:"_blank"}},[t._v(t._s(e.transaction_id))])]),t._v(" "),n("td",{staticStyle:{height:"40px"}},[t._v(t._s(e.timestamp))]),t._v(" "),n("td",{staticStyle:{height:"40px"}},[t._v("$"+t._s(e.amt))]),t._v(" "),n("td",{staticStyle:{height:"40px"}},[t._v(t._s(e.status))])])})],2)])])])])},staticRenderFns:[]}},function(t,e){}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(1);
+module.exports = __webpack_require__(6);
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Nova.booting(function (Vue, router) {
+    Vue.component('paypal', __webpack_require__(2));
+});
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(4)
+/* template */
+var __vue_template__ = __webpack_require__(5)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/Card.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-b9bc2c0a", Component.options)
+  } else {
+    hotAPI.reload("data-v-b9bc2c0a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['card'],
+    data: function data() {
+        return {
+            paypal_logo: 'https://www.paypalobjects.com/webstatic/en_US/mktg/pages/stories/pp_h_rgb.jpg',
+            response: [],
+            balance: [],
+            hide_logo: false,
+            loading: true
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        if (this.card.hide_logo == true) {
+            this.hide_logo = true;
+        }
+        Nova.request().get('/nova-vendor/paypal/getData', {
+            params: {
+                days: this.card.days,
+                count: this.card.count
+            }
+        }).then(function (response) {
+            _this.balance = response.data.balance;
+            _this.transactions = response.data.transactions;
+            _this.loading = false;
+            document.getElementById('spinner').style.display = 'none';
+        });
+    }
+});
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("card", { staticClass: "h-auto" }, [
+    _c(
+      "div",
+      { staticClass: "px-3 py-3", staticStyle: { "min-height": "200px" } },
+      [
+        _c("div", { attrs: { align: "left" } }, [
+          _c("img", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.hide_logo === false,
+                expression: "hide_logo === false"
+              }
+            ],
+            attrs: { src: _vm.paypal_logo, width: "150" }
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "spinner",
+            attrs: { id: "spinner", align: "center" }
+          })
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: !_vm.loading,
+                expression: "!loading"
+              }
+            ]
+          },
+          [
+            _c(
+              "div",
+              {
+                staticStyle: {
+                  "margin-bottom": "20px",
+                  "font-family": "'Arial'"
+                }
+              },
+              [
+                _vm.balance.ACK === "Success"
+                  ? _c(
+                      "div",
+                      {
+                        staticClass: "text-center text-2lg font-light",
+                        staticStyle: { "font-size": "14px", color: "green" }
+                      },
+                      [
+                        _vm._v(
+                          "Current Balance: $" + _vm._s(_vm.balance.L_AMT0)
+                        )
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.balance.ACK === "Failure"
+                  ? _c(
+                      "div",
+                      {
+                        staticClass: "text-center",
+                        staticStyle: { color: "red", "font-size": "12px" }
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(_vm.balance.L_SEVERITYCODE0) +
+                            " " +
+                            _vm._s(_vm.balance.L_ERRORCODE0) +
+                            ": " +
+                            _vm._s(_vm.balance.L_LONGMESSAGE0)
+                        )
+                      ]
+                    )
+                  : _vm._e()
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.transactions,
+                    expression: "transactions"
+                  }
+                ],
+                staticStyle: { "margin-bottom": "20px" }
+              },
+              [
+                _c(
+                  "table",
+                  {
+                    staticClass:
+                      "table table-bordered table-hover table-responsive",
+                    staticStyle: { "font-size": "14px", "margin-left": "45px" }
+                  },
+                  [
+                    _c("tr", [
+                      _c("th", [_vm._v("Transaction ID")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Date")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Amount")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Status")])
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(_vm.transactions, function(transaction) {
+                      return _c("tr", [
+                        _c(
+                          "td",
+                          {
+                            staticStyle: { height: "40px", "font-size": "12px" }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href:
+                                    "https://www.paypal.com/activity/payment/" +
+                                    transaction.transaction_id,
+                                  target: "_blank"
+                                }
+                              },
+                              [_vm._v(_vm._s(transaction.transaction_id))]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("td", { staticStyle: { height: "40px" } }, [
+                          _vm._v(_vm._s(transaction.timestamp))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticStyle: { height: "40px" } }, [
+                          _vm._v("$" + _vm._s(transaction.amt))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticStyle: { height: "40px" } }, [
+                          _vm._v(_vm._s(transaction.status))
+                        ])
+                      ])
+                    })
+                  ],
+                  2
+                )
+              ]
+            )
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-b9bc2c0a", module.exports)
+  }
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ })
+/******/ ]);

@@ -1,1 +1,17 @@
 // Nova Card CSS
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  margin-top: 20px;
+  margin-left: -15px;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: #07d;
+  animation: spinner .6s linear infinite;
+}

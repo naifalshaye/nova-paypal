@@ -1,13 +1,13 @@
 <template>
     <card class="h-auto">
-        <div class="px-3 py-3   ">
+        <div class="px-3 py-3" style="min-height:200px;">
             <div align="left">
                 <img :src="paypal_logo" v-show="hide_logo === false" width="150"/>
-                <div class="spinner" id="spinner" align="right"></div>
+                <div class="spinner" id="spinner" align="center"></div>
             </div>
 
             <div v-show="!loading">
-                <div style="margin-bottom: 10px; font-family: 'Arial';">
+                <div style="margin-bottom: 20px; font-family: 'Arial';">
                     <div class="text-center text-2lg font-light" v-if="balance.ACK === 'Success'" style="font-size:14px; color:green;">Current Balance: ${{balance.L_AMT0}}</div>
                     <div class="text-center" style="color:red; font-size:12px;" v-if="balance.ACK === 'Failure'">{{balance.L_SEVERITYCODE0}} {{balance.L_ERRORCODE0}}: {{balance.L_LONGMESSAGE0}}</div>
                 </div>
@@ -33,25 +33,6 @@
         </div>
     </card>
 </template>
-<style>
-    @keyframes spinner {
-        to {transform: rotate(360deg);}
-    }
-
-    .spinner:before {
-        content: '';
-        box-sizing: border-box;
-        position: absolute;
-        width: 45px;
-        height: 45px;
-        margin-top: -40px;
-        margin-left:-40px;
-        border-radius: 50%;
-        border: 1px solid #ccc;
-        border-top-color: #07d;
-        animation: spinner .6s linear infinite;
-    }
-</style>
 <script>
     export default {
         props: ['card'],
