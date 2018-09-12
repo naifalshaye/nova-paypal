@@ -12,9 +12,9 @@
                     <div class="text-center" style="color:red; font-size:12px;" v-if="balance.ACK === 'Failure'">{{balance.L_SEVERITYCODE0}} {{balance.L_ERRORCODE0}}: {{balance.L_LONGMESSAGE0}}</div>
                 </div>
                 <div style="margin-bottom:20px;" v-show="transactions">
-                    <table class="table table-bordered table-hover table-responsive" style="font-size:14px; margin-left:45px;">
+                    <table class="table table-bordered table-hover table-responsive" style="font-size:14px; margin-left:auto; margin-right:auto;">
                         <tr>
-                            <th>Transaction ID</th>
+                            <th>Transaction ID</th> 
                             <th>Date</th>
                             <th>Amount</th>
                             <th>Status</th>
