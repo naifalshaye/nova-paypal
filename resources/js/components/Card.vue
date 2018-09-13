@@ -14,7 +14,7 @@
                 <div style="margin-bottom:20px;" v-show="transactions">
                     <table class="table table-bordered table-hover table-responsive" style="font-size:14px; margin-left:auto; margin-right:auto;">
                         <tr>
-                            <th>Transaction ID</th> 
+                            <th>Transaction ID</th>
                             <th>Date</th>
                             <th>Amount</th>
                             <th>Status</th>

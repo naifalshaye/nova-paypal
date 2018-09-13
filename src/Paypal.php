@@ -11,7 +11,7 @@ class Paypal extends Card
      *
      * @var string
      */
-    public $width = '1/2';
+    public $width = '1/3';
 
     /**
      * Get the component name for the element.
