@@ -11,7 +11,7 @@
                     <div class="text-center text-2lg font-light" v-if="balance.ACK === 'Success'" style="font-size:14px; color:green;">Current Balance: ${{balance.L_AMT0}}</div>
                     <div class="text-center" style="color:red; font-size:12px;" v-if="balance.ACK === 'Failure'">{{balance.L_SEVERITYCODE0}} {{balance.L_ERRORCODE0}}: {{balance.L_LONGMESSAGE0}}</div>
                 </div>
-                <div style="margin-bottom:20px;" v-show="transactions">
+                <div style="margin-bottom:20px;" v-if="transactions !== false">
                     <table class="table table-bordered table-hover table-responsive" style="font-size:14px; margin-left:auto; margin-right:auto;">
                         <tr>
                             <th>Transaction ID</th>
@@ -29,8 +29,10 @@
                         </tr>
                     </table>
                 </div>
+                <div v-if="transactions === false" style="text-align: center; color:#db363c; font-size:12px;">No transacitons found since {{this.days}} days ago!</div>
             </div>
         </div>
+
     </card>
 </template>
 <script>
@@ -42,13 +44,22 @@
                 response: [],
                 balance: [],
                 hide_logo: false,
-                loading: true
+                loading: true,
+                days: 5,
             }
         },
         mounted() {
             if (this.card.hide_logo == true){
                 this.hide_logo = true;
+                this.days = true;
             }
+            if (this.card.days > 0) {
+                this.days = this.card.days;
+            } else{
+                this.days = 5;
+            }
+
+
             Nova.request().get('/nova-vendor/paypal/getData', {
                 params: {
                     days: this.card.days,
@@ -57,7 +68,12 @@
             })
             .then(response => {
                 this.balance = response.data.balance;
-                this.transactions = response.data.transactions;
+                if (response.data.transactions.length > 0){
+                    this.transactions = response.data.transactions;
+                }else{
+                    this.transactions = false;
+                }
+
                 this.loading = false;
                 document.getElementById('spinner').style.display = 'none';
 
