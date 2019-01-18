@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Naif\Paypal\Http\Controllers\PayPalController;
+use Naif\Paypal\Http\Controllers\SentryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,4 @@ use Naif\Paypal\Http\Controllers\PayPalController;
 //     //
 // });
 
-Route::get('getData', PayPalController::class.'@index');
+Route::get('getData', PaypalController::class.'@index');

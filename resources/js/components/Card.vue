@@ -67,9 +67,9 @@
                 }
             })
             .then(response => {
-                this.balance = response.data.balance;
-                if (response.data.transactions.length > 0){
-                    this.transactions = response.data.transactions;
+                this.balance = response.data.balance.balance;
+                if (response.data.transactions.transactions.length > 0){
+                    this.transactions = response.data.transactions.transactions;
                 }else{
                     this.transactions = false;
                 }
