@@ -34,7 +34,8 @@ protected function cards()
      (new Paypal())->days(3)->count(5)->hideLogo(true)
     ];
 }
-  
+```
+
 ## Support:
 naif@naif.io
 
