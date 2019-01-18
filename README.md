@@ -3,6 +3,7 @@
 A Laravel Nova card to display PayPal current balance and latest transactions.
 
 ## Installation:
+First you must install naif/laravel-paypal [naif/laravel-paypal](https://github.com/naifalshaye/laravel-paypal) into your Laravel app.
 
 You can install the package in to a Laravel app that uses Nova via composer:
 
@@ -33,35 +34,7 @@ protected function cards()
      (new Paypal())->days(3)->count(5)->hideLogo(true)
     ];
 }
-         
-```
-
-<img src="https://raw.githubusercontent.com/naifalshaye/nova-paypal/master/screenshots/example.png" width="700">
-
-<h4>If there is any error occurs it will appear in the card with error code and description from PayPal</h4>
-<img src="https://raw.githubusercontent.com/naifalshaye/nova-paypal/master/screenshots/error.png" width="700">
-
-Here are a list of all errors from PayPal you can lookup by error code:
-https://developer.paypal.com/docs/classic/api/errors/
-
-## Get your API access from PayPal website
-https://www.paypal.com/businessprofile/mytools/apiaccess/firstparty/signature
-
-Paypal > Profile > Profile and settings > My selling tools > API access > NVP/SOAP API integration (Classic)
-
-<img src="https://github.com/naifalshaye/nova-paypal/blob/master/screenshots/auth.png">
-
-Note: The maximum number of transactions that can be returned from PayPal API is 100.
-
-## Add API details to your .env file
-```php
-
-NOVA_PAYPAL_USERNAME=##############
-NOVA_PAYPAL_PASSWORD=##############
-NOVA_PAYPAL_SIGNATURE=#############
-
-```
-
+  
 ## Support:
 naif@naif.io
 
