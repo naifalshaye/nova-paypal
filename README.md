@@ -3,7 +3,6 @@
 A Laravel Nova card to display PayPal current balance and latest transactions.
 
 ## Installation:
-First you must install naif/laravel-paypal [naif/laravel-paypal](https://github.com/naifalshaye/laravel-paypal) into your Laravel app.
 
 You can install the package in to a Laravel app that uses Nova via composer:
 
