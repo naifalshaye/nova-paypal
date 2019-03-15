@@ -8,7 +8,8 @@
     ],
     "license": "MIT",
     "require": {
-        "php": ">=7.1.0"
+        "php": ">=7.1.0",
+        "naif/laravel-paypal": "dev-master"
     },
     "autoload": {
         "psr-4": {
